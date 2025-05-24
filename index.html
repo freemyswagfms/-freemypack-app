@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>FreeMyPack</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+  <style>
+    body {
+      background: #0d0d0d;
+      color: white;
+      font-family: sans-serif;
+      text-align: center;
+      padding: 50px;
+    }
+    button {
+      padding: 15px 30px;
+      font-size: 18px;
+      border: none;
+      border-radius: 8px;
+      background: #00ccff;
+      color: #000;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h1>Добро пожаловать в FreeMyPack</h1>
+  <p>Нажми, чтобы получить свою карточку</p>
+  <button onclick="spin()">Крутить</button>
+
+  <script>
+    Telegram.WebApp.ready();
+    function spin() {
+      alert("Выпала карточка: Take Care (Minecraft Edition)");
+      // тут позже добавим случайную генерацию и стили
+    }
+  </script>
+</body>
+</html>
