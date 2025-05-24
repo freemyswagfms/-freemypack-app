@@ -1,142 +1,130 @@
 <!DOCTYPE html>
-<html>
+<html lang="ru">
 <head>
   <meta charset="UTF-8">
-  <title>FreeMyPack</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+  <title>FreeMyPack</title>
   <style>
     * {
       box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
     body {
-      margin: 0;
-      font-family: sans-serif;
-      background: #0d0d0d;
+      background-color: #0d0d0d;
+      font-family: -apple-system, BlinkMacSystemFont, sans-serif;
       color: white;
     }
     .page {
       display: none;
-      padding: 40px 20px;
+      padding: 20px;
     }
     .active {
       display: block;
     }
+    .nav {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      display: flex;
+      justify-content: space-around;
+      background: #0d0d0d;
+      border-top: 1px solid #333;
+      padding: 10px 0;
+    }
+    .nav button {
+      background: none;
+      border: none;
+      color: white;
+      font-size: 20px;
+      padding: 5px 10px;
+      border-radius: 50%;
+    }
+    .nav .active-tab {
+      background-color: #8b1a1a;
+    }
     .settings ul {
       list-style: none;
+      margin-top: 60px;
       padding: 0;
-      margin: 0;
-      border-top: 1px solid #555;
-      max-width: 320px;
-      margin: 0 auto;
-    }
-    .settings li {
-      padding: 12px 0;
-      border-bottom: 1px solid #555;
-      color: white;
-    }
-    .settings li.disabled {
-      opacity: 0.4;
-      pointer-events: none;
-    }
-    .support {
-      margin-top: 20px;
-      padding: 12px;
-      font-size: 14px;
-      border: 1px solid #ccc;
-      background: transparent;
-      color: white;
-      border-radius: 6px;
-      text-align: center;
-      cursor: pointer;
-      max-width: 320px;
+      max-width: 90%;
       margin-left: auto;
       margin-right: auto;
     }
-    .spin-page h1, .spin-page p {
-      text-align: center;
+    .settings li {
+      padding: 15px 0;
+      border-bottom: 1px solid #555;
+      font-size: 17px;
     }
-    button {
+    .settings li.disabled {
+      color: #777;
+      pointer-events: none;
+    }
+    .support-btn {
       display: block;
-      margin: 20px auto;
-      padding: 12px 24px;
+      margin: 40px auto;
+      padding: 10px 20px;
       font-size: 16px;
-      background-color: #00ccff;
-      color: #000;
-      border: none;
-      border-radius: 8px;
+      color: white;
+      background: none;
+      border: 1px solid #ccc;
+      border-radius: 6px;
       cursor: pointer;
     }
-    .bottom-nav {
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      height: 60px;
-      background: #111;
-      display: flex;
-      justify-content: space-around;
-      align-items: center;
-      border-top: 1px solid #222;
+    .spin-page {
+      text-align: center;
+      margin-top: 100px;
     }
-    .nav-item {
+    .spin-page button {
+      padding: 15px 30px;
+      font-size: 18px;
+      background: #8b1a1a;
+      border: none;
+      border-radius: 8px;
       color: white;
-      font-size: 24px;
-      width: 50px;
-      height: 50px;
-      border-radius: 25px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .nav-item.active {
-      background: #8B0000;
+      cursor: pointer;
     }
   </style>
 </head>
 <body>
 
-  <div id="home" class="page spin-page active">
-    <h1>Добро пожаловать в FreeMyPack!</h1>
-    <p>Нажми, чтобы получить свою карточку</p>
-    <button onclick="spin()">🎲 Крутить</button>
-  </div>
-
-  <div id="settings" class="page">
-    <div class="settings">
-      <ul>
-        <li>Пополнение баланса</li>
-        <li>Жалобы и предложения</li>
-        <li>Внешний вид</li>
-        <li>Мы в соцсетях</li>
-        <li>Поддержка</li>
-        <li>Сотрудничество и реклама</li>
-        <li class="disabled">Авторы</li>
-      </ul>
-      <div class="support">Поддержать нас</div>
+  <div id="spin" class="page active">
+    <div class="spin-page">
+      <h1>Добро пожаловать в FreeMyPack!</h1>
+      <p>Нажми, чтобы получить свою карточку</p>
+      <button onclick="spin()">Крутить</button>
     </div>
   </div>
 
-  <div class="bottom-nav">
-    <div class="nav-item active" onclick="showPage('home', this)">🏠</div>
-    <div class="nav-item" onclick="showPage('settings', this)">⚙️</div>
+  <div id="settings" class="page">
+    <ul class="settings">
+      <li>Пополнение баланса</li>
+      <li>Жалобы и предложения</li>
+      <li>Внешний вид</li>
+      <li>Мы в соцсетях</li>
+      <li>Поддержка</li>
+      <li>Сотрудничество и реклама</li>
+      <li class="disabled">Авторы</li>
+    </ul>
+    <button class="support-btn">Поддержать нас</button>
+  </div>
+
+  <div class="nav">
+    <button onclick="navigate('spin', this)" class="active-tab">🏠</button>
+    <button onclick="navigate('settings', this)">⚙️</button>
   </div>
 
   <script>
-    Telegram.WebApp.ready();
+    function navigate(page, el) {
+      document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+      document.getElementById(page).classList.add('active');
+      document.querySelectorAll('.nav button').forEach(b => b.classList.remove('active-tab'));
+      el.classList.add('active-tab');
+    }
 
     function spin() {
       alert("Выпала карточка: Take Care (Minecraft Edition)");
     }
-
-    function showPage(pageId, el) {
-      document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-      document.getElementById(pageId).classList.add('active');
-
-      document.querySelectorAll('.nav-item').forEach(i => i.classList.remove('active'));
-      el.classList.add('active');
-    }
   </script>
-
 </body>
 </html>
