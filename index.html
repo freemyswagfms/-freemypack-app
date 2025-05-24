@@ -14,6 +14,7 @@
       background-color: #0d0d0d;
       font-family: -apple-system, BlinkMacSystemFont, sans-serif;
       color: white;
+      background-image: url('https://www.transparenttextures.com/patterns/dark-mosaic.png');
     }
     .page {
       display: none;
@@ -43,32 +44,36 @@
     .nav .active-tab {
       background-color: #8b1a1a;
     }
-    .settings ul {
-      list-style: none;
+    .settings {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
       margin-top: 60px;
-      padding: 0;
-      max-width: 90%;
-      margin-left: auto;
-      margin-right: auto;
+      gap: 12px;
     }
-    .settings li {
-      padding: 15px 0;
+    .settings button.option {
+      width: 90%;
+      background: none;
+      border: none;
       border-bottom: 1px solid #555;
+      color: white;
       font-size: 17px;
+      padding: 15px 0;
+      text-align: left;
     }
-    .settings li.disabled {
+    .settings .disabled {
       color: #777;
       pointer-events: none;
     }
     .support-btn {
       display: block;
       margin: 40px auto;
-      padding: 10px 20px;
+      padding: 12px 24px;
       font-size: 16px;
       color: white;
       background: none;
       border: 1px solid #ccc;
-      border-radius: 6px;
+      border-radius: 14px;
       cursor: pointer;
     }
     .spin-page {
@@ -97,27 +102,29 @@
   </div>
 
   <div id="settings" class="page">
-    <ul class="settings">
-      <li>Пополнение баланса</li>
-      <li>Жалобы и предложения</li>
-      <li>Внешний вид</li>
-      <li>Мы в соцсетях</li>
-      <li>Поддержка</li>
-      <li>Сотрудничество и реклама</li>
-      <li class="disabled">Авторы</li>
-    </ul>
+    <div class="settings">
+      <button class="option">Пополнение баланса</button>
+      <button class="option">Жалобы и предложения</button>
+      <button class="option">Внешний вид</button>
+      <button class="option">Мы в соцсетях</button>
+      <button class="option">Поддержка</button>
+      <button class="option">Сотрудничество и реклама</button>
+      <button class="option disabled">Авторы</button>
+    </div>
     <button class="support-btn">Поддержать нас</button>
   </div>
 
   <div class="nav">
     <button onclick="navigate('spin', this)" class="active-tab">🏠</button>
+    <button onclick="navigate('', this)">🗂️</button>
+    <button onclick="navigate('', this)">🛒</button>
     <button onclick="navigate('settings', this)">⚙️</button>
   </div>
 
   <script>
     function navigate(page, el) {
       document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-      document.getElementById(page).classList.add('active');
+      if (page) document.getElementById(page).classList.add('active');
       document.querySelectorAll('.nav button').forEach(b => b.classList.remove('active-tab'));
       el.classList.add('active-tab');
     }
