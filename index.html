@@ -30,21 +30,28 @@
       display: flex;
       justify-content: space-around;
       background: #0d0d0d;
-      border-top: 1px solid #333;
       padding: 10px 0;
     }
     .nav button {
       background: none;
       border: none;
-      padding: 8px;
-      border-radius: 20px;
-    }
-    .nav .active-tab {
-      background-color: #8b1a1a;
+      padding: 0;
     }
     .nav img {
-      width: 26px;
-      height: 26px;
+      width: 75px;
+      height: 30px;
+    }
+    .nav .active-tab img {
+      content: url('https://raw.githubusercontent.com/freemyswagfms/freemypack-icons/main/home%20в%20активном.png');
+    }
+    .nav button:nth-child(2).active-tab img {
+      content: url('https://raw.githubusercontent.com/freemyswagfms/freemypack-icons/main/cards%20в%20активном.png');
+    }
+    .nav button:nth-child(3).active-tab img {
+      content: url('https://raw.githubusercontent.com/freemyswagfms/freemypack-icons/main/shop%20в%20активном.png');
+    }
+    .nav button:nth-child(4).active-tab img {
+      content: url('https://raw.githubusercontent.com/freemyswagfms/freemypack-icons/main/settings%20в%20активном.png');
     }
     .settings {
       display: flex;
@@ -75,7 +82,7 @@
       color: white;
       background: none;
       border: 1px solid #ccc;
-      border-radius: 30px;
+      border-radius: 24px;
       cursor: pointer;
     }
     .spin-page {
@@ -117,16 +124,16 @@
 
   <div class="nav">
     <button onclick="navigate('spin', this)" class="active-tab">
-      <img src="/mnt/data/Vector 4.png" alt="Домой">
+      <img src="https://raw.githubusercontent.com/freemyswagfms/freemypack-icons/main/home.png" alt="Домой">
     </button>
     <button onclick="navigate('', this)">
-      <img src="/mnt/data/Vector 3.png" alt="Категории">
+      <img src="https://raw.githubusercontent.com/freemyswagfms/freemypack-icons/main/cards.png" alt="Категории">
     </button>
     <button onclick="navigate('', this)">
-      <img src="/mnt/data/Group 2.png" alt="Магазин">
+      <img src="https://raw.githubusercontent.com/freemyswagfms/freemypack-icons/main/shop.png" alt="Магазин">
     </button>
     <button onclick="navigate('settings', this)">
-      <img src="/mnt/data/Component 2.png" alt="Настройки">
+      <img src="https://raw.githubusercontent.com/freemyswagfms/freemypack-icons/main/settings.png" alt="Настройки">
     </button>
   </div>
 
