@@ -36,13 +36,15 @@
     .nav button {
       background: none;
       border: none;
-      color: white;
-      font-size: 20px;
       padding: 8px;
-      border-radius: 12px;
+      border-radius: 20px;
     }
     .nav .active-tab {
       background-color: #8b1a1a;
+    }
+    .nav img {
+      width: 26px;
+      height: 26px;
     }
     .settings {
       display: flex;
@@ -73,7 +75,7 @@
       color: white;
       background: none;
       border: 1px solid #ccc;
-      border-radius: 22px;
+      border-radius: 30px;
       cursor: pointer;
     }
     .spin-page {
@@ -92,7 +94,6 @@
   </style>
 </head>
 <body>
-
   <div id="spin" class="page active">
     <div class="spin-page">
       <h1>Добро пожаловать в FreeMyPack!</h1>
@@ -116,16 +117,16 @@
 
   <div class="nav">
     <button onclick="navigate('spin', this)" class="active-tab">
-      <img src="https://cdn-icons-png.flaticon.com/512/25/25694.png" width="24" height="24" alt="Домой">
+      <img src="/mnt/data/Vector 4.png" alt="Домой">
     </button>
     <button onclick="navigate('', this)">
-      <img src="https://cdn-icons-png.flaticon.com/512/1828/1828919.png" width="24" height="24" alt="Категории">
+      <img src="/mnt/data/Vector 3.png" alt="Категории">
     </button>
     <button onclick="navigate('', this)">
-      <img src="https://cdn-icons-png.flaticon.com/512/126/126510.png" width="24" height="24" alt="Магазин">
+      <img src="/mnt/data/Group 2.png" alt="Магазин">
     </button>
     <button onclick="navigate('settings', this)">
-      <img src="https://cdn-icons-png.flaticon.com/512/3524/3524631.png" width="24" height="24" alt="Настройки">
+      <img src="/mnt/data/Component 2.png" alt="Настройки">
     </button>
   </div>
 
