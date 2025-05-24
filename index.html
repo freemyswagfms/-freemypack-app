@@ -38,8 +38,8 @@
       border: none;
       color: white;
       font-size: 20px;
-      padding: 5px 10px;
-      border-radius: 50%;
+      padding: 8px;
+      border-radius: 12px;
     }
     .nav .active-tab {
       background-color: #8b1a1a;
@@ -53,13 +53,13 @@
     }
     .settings button.option {
       width: 90%;
-      background: none;
+      background: #1a1a1a;
       border: none;
-      border-bottom: 1px solid #555;
       color: white;
       font-size: 17px;
-      padding: 15px 0;
+      padding: 15px;
       text-align: left;
+      border-radius: 12px;
     }
     .settings .disabled {
       color: #777;
@@ -68,12 +68,12 @@
     .support-btn {
       display: block;
       margin: 40px auto;
-      padding: 12px 24px;
+      padding: 14px 26px;
       font-size: 16px;
       color: white;
       background: none;
       border: 1px solid #ccc;
-      border-radius: 14px;
+      border-radius: 22px;
       cursor: pointer;
     }
     .spin-page {
@@ -115,10 +115,18 @@
   </div>
 
   <div class="nav">
-    <button onclick="navigate('spin', this)" class="active-tab">🏠</button>
-    <button onclick="navigate('', this)">🗂️</button>
-    <button onclick="navigate('', this)">🛒</button>
-    <button onclick="navigate('settings', this)">⚙️</button>
+    <button onclick="navigate('spin', this)" class="active-tab">
+      <img src="https://cdn-icons-png.flaticon.com/512/25/25694.png" width="24" height="24" alt="Домой">
+    </button>
+    <button onclick="navigate('', this)">
+      <img src="https://cdn-icons-png.flaticon.com/512/1828/1828919.png" width="24" height="24" alt="Категории">
+    </button>
+    <button onclick="navigate('', this)">
+      <img src="https://cdn-icons-png.flaticon.com/512/126/126510.png" width="24" height="24" alt="Магазин">
+    </button>
+    <button onclick="navigate('settings', this)">
+      <img src="https://cdn-icons-png.flaticon.com/512/3524/3524631.png" width="24" height="24" alt="Настройки">
+    </button>
   </div>
 
   <script>
