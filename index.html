@@ -10,31 +10,100 @@
       background: #0d0d0d;
       color: white;
       font-family: sans-serif;
-      text-align: center;
-      padding: 50px;
+      padding: 40px 20px;
+      margin: 0;
     }
-    button {
-      padding: 15px 30px;
+
+    .settings {
+      max-width: 320px;
+      margin: 0 auto;
+    }
+
+    .settings ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      border-top: 1px solid #555;
+    }
+
+    .settings li {
+      padding: 12px 0;
+      border-bottom: 1px solid #555;
+      color: white;
+    }
+
+    .settings li.disabled {
+      opacity: 0.4;
+      pointer-events: none;
+    }
+
+    .settings .support {
+      padding: 12px;
+      font-size: 14px;
+      border: 1px solid #ccc;
+      background: transparent;
+      color: white;
+      border-radius: 6px;
+      text-align: center;
+      margin-top: 20px;
+      cursor: pointer;
+    }
+
+    h1 {
+      text-align: center;
+      margin-top: 40px;
       font-size: 18px;
+    }
+
+    p {
+      text-align: center;
+      font-size: 14px;
+    }
+
+    button {
+      display: block;
+      margin: 20px auto;
+      padding: 12px 24px;
+      font-size: 16px;
+      background-color: #00ccff;
+      color: #000;
       border: none;
       border-radius: 8px;
-      background: #00ccff;
-      color: #000;
       cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #00aacc;
     }
   </style>
 </head>
 <body>
-  <h1>Добро пожаловать в FreeMyPack</h1>
+
+  <div class="settings">
+    <ul>
+      <li>Пополнение баланса</li>
+      <li>Жалобы и предложения</li>
+      <li>Внешний вид</li>
+      <li>Мы в соцсетях</li>
+      <li>Поддержка</li>
+      <li>Сотрудничество и реклама</li>
+      <li class="disabled">Авторы</li>
+    </ul>
+    <div class="support">Поддержать нас</div>
+  </div>
+
+  <h1>Добро пожаловать в FreeMyPack!</h1>
   <p>Нажми, чтобы получить свою карточку</p>
-  <button onclick="spin()">Крутить</button>
+  <button onclick="spin()">🎲 Крутить</button>
 
   <script>
     Telegram.WebApp.ready();
+
     function spin() {
       alert("Выпала карточка: Take Care (Minecraft Edition)");
-      // тут позже добавим случайную генерацию и стили
+      // тут позже добавим генерацию и стили
     }
   </script>
+
 </body>
 </html>
