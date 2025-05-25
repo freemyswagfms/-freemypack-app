@@ -138,6 +138,7 @@
     position: relative;
     z-index: 2;
     cursor: pointer;
+    bottom: 5px;
   }
   .nav-btn.active-tab {
     opacity: 1;
