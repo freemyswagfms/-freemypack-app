@@ -1,129 +1,42 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>FreeMyPack</title>
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-    body {
-      background-color: #0d0d0d;
-      font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-      color: white;
-      background-image: url('https://www.transparenttextures.com/patterns/dark-mosaic.png');
-    }
-    .page {
-      display: none;
-      padding: 20px;
-    }
-    .active {
-      display: block;
-    }
-    .nav {
-      position: fixed;
-      bottom: 0;
-      width: 100%;
-      display: flex;
-      justify-content: space-around;
-      background: #0d0d0d;
-      padding: 10px 0;
-      z-index: 10;
-    }
-    .nav button {
-      background: none;
-      border: none;
-      padding: 0;
-    }
-    .nav img {
-      width: 75px;
-      height: 30px;
-    }
-    .nav button:nth-child(1) img {
-      content: url('https://raw.githubusercontent.com/freemyswagfms/freemypack-icons/main/home.svg');
-    }
-    .nav button:nth-child(2) img {
-      content: url('https://raw.githubusercontent.com/freemyswagfms/freemypack-icons/main/cards.svg');
-    }
-    .nav button:nth-child(3) img {
-      content: url('https://raw.githubusercontent.com/freemyswagfms/freemypack-icons/main/shop.svg');
-    }
-    .nav button:nth-child(4) img {
-      content: url('https://raw.githubusercontent.com/freemyswagfms/freemypack-icons/main/settings.svg');
-    }
-    .nav button:nth-child(1).active-tab img {
-      content: url('https://raw.githubusercontent.com/freemyswagfms/freemypack-icons/main/home%20%D0%B2%20%D0%B0%D0%BA%D1%82%D0%B8%D0%B2%D0%BD%D0%BE%D0%BC.png');
-    }
-    .nav button:nth-child(2).active-tab img {
-      content: url('https://raw.githubusercontent.com/freemyswagfms/freemypack-icons/main/cards%20%D0%B2%20%D0%B0%D0%BA%D1%82%D0%B8%D0%B2%D0%BD%D0%BE%D0%BC.png');
-    }
-    .nav button:nth-child(3).active-tab img {
-      content: url('https://raw.githubusercontent.com/freemyswagfms/freemypack-icons/main/shop%20%D0%B2%20%D0%B0%D0%BA%D1%82%D0%B8%D0%B2%D0%BD%D0%BE%D0%BC.png');
-    }
-    .nav button:nth-child(4).active-tab img {
-      content: url('https://raw.githubusercontent.com/freemyswagfms/freemypack-icons/main/settings%20%D0%B2%20%D0%B0%D0%BA%D1%82%D0%B8%D0%B2%D0%BD%D0%BE%D0%BC.png');
-    }
-    .settings {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      margin-top: 60px;
-      gap: 12px;
-    }
-    .settings button.option {
-      width: 90%;
-      background: #1a1a1a;
-      border: none;
-      color: white;
-      font-size: 17px;
-      padding: 15px;
-      text-align: left;
-      border-radius: 12px;
-    }
-    .settings .disabled {
-      color: #777;
-      pointer-events: none;
-    }
-    .support-btn {
-      display: block;
-      margin: 40px auto;
-      padding: 14px 26px;
-      font-size: 16px;
-      color: white;
-      background: none;
-      border: 1px solid #ccc;
-      border-radius: 24px;
-      cursor: pointer;
-    }
-    .spin-page {
-      text-align: center;
-      margin-top: 100px;
-    }
-    .spin-page button {
-      padding: 15px 30px;
-      font-size: 18px;
-      background: #8b1a1a;
-      border: none;
-      border-radius: 8px;
-      color: white;
-      cursor: pointer;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
 </head>
 <body>
-  <div id="spin" class="page active">
-    <div class="spin-page">
-      <h1>Добро пожаловать в FreeMyPack!</h1>
-      <p>Нажми, чтобы получить свою карточку</p>
-      <button onclick="spin()">Крутить</button>
+
+  <!-- Страница спиннера -->
+  <div id="home" class="page active">
+    <div class="spin-container">
+      <h1 class="spin-title">Добро пожаловать в FreeMyPack!</h1>
+      <p class="spin-subtitle">Нажми, чтобы получить свою карточку</p>
+      <button class="spin-button" onclick="spin()">Крутить</button>
     </div>
   </div>
 
+  <!-- Страница карточек -->
+  <div id="cards" class="page">
+    <div class="spin-container">
+      <h2>Карточки</h2>
+      <p>Здесь будет коллекция</p>
+    </div>
+  </div>
+
+  <!-- Страница магазина -->
+  <div id="shop" class="page">
+    <div class="spin-container">
+      <h2>Магазин</h2>
+      <p>Покупка паков или бустов</p>
+    </div>
+  </div>
+
+  <!-- Страница настроек -->
   <div id="settings" class="page">
-    <div class="settings">
+    <div class="settings-container">
       <button class="option">Пополнение баланса</button>
       <button class="option">Жалобы и предложения</button>
       <button class="option">Внешний вид</button>
@@ -135,32 +48,18 @@
     <button class="support-btn">Поддержать нас</button>
   </div>
 
-  <div class="nav">
-    <button onclick="navigate('spin', this)" class="active-tab">
-      <img alt="Домой">
-    </button>
-    <button onclick="navigate('', this)">
-      <img alt="Категории">
-    </button>
-    <button onclick="navigate('', this)">
-      <img alt="Магазин">
-    </button>
-    <button onclick="navigate('settings', this)">
-      <img alt="Настройки">
-    </button>
+  <!-- Навигация -->
+  <div class="nav-bar">
+    <div class="nav-inner">
+      <button class="nav-btn btn-home active-tab" onclick="navigate('home', this)"></button>
+      <button class="nav-btn btn-cards" onclick="navigate('cards', this)"></button>
+      <button class="nav-btn btn-shop" onclick="navigate('shop', this)"></button>
+      <button class="nav-btn btn-settings" onclick="navigate('settings', this)"></button>
+      <div class="nav-indicator"></div>
+    </div>
   </div>
+  
 
-  <script>
-    function navigate(page, el) {
-      document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-      if (page) document.getElementById(page).classList.add('active');
-      document.querySelectorAll('.nav button').forEach(b => b.classList.remove('active-tab'));
-      el.classList.add('active-tab');
-    }
-
-    function spin() {
-      alert("Выпала карточка: Take Care (Minecraft Edition)");
-    }
-  </script>
+  <script src="main.js"></script>
 </body>
 </html>
