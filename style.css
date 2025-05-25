@@ -141,30 +141,30 @@
   
   /* Уникальные иконки */
   .btn-home {
-    background-image: url('assets/icons/home.svg');
+    background-image: url('home.svg');
   }
   .btn-cards {
-    background-image: url('assets/icons/cards.svg');
+    background-image: url('cards.svg');
   }
   .btn-shop {
-    background-image: url('assets/icons/shop.svg');
+    background-image: url('shop.svg');
   }
   .btn-settings {
-    background-image: url('assets/icons/settings.svg');
+    background-image: url('settings.svg');
   }
   
   .btn-home:active-tab {
-  background-image: url('assets/icons/home.svg');
+  background-image: url('home.svg');
   }
 
   .btn-cards:active-tab {
-    background-image: url('assets/icons/cards.svg');
+    background-image: url('cards.svg');
   }
 
   .btn-shop:active-tab {
-    background-image: url('assets/icons/shop.svg');
+    background-image: url('shop.svg');
   }
 
   .btn-settings:active-tab {
-    background-image: url('assets/icons/settings.svg');
+    background-image: url('settings.svg');
   }
