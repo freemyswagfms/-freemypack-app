@@ -114,7 +114,7 @@
   /* Индикатор */
   .nav-indicator {
     position: absolute;
-    top: 35%;
+    top: 50%;
     transform: translateX(0) translateY(-50%);
     width: 75px;
     height: 40px;
