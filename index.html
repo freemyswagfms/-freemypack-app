@@ -31,6 +31,7 @@
       justify-content: space-around;
       background: #0d0d0d;
       padding: 10px 0;
+      z-index: 10;
     }
     .nav button {
       background: none;
@@ -41,17 +42,29 @@
       width: 75px;
       height: 30px;
     }
-    .nav .active-tab img {
-      content: url('https://raw.githubusercontent.com/freemyswagfms/freemypack-icons/main/home%20в%20активном.png');
+    .nav button:nth-child(1) img {
+      content: url('https://raw.githubusercontent.com/freemyswagfms/freemypack-icons/main/home.png');
+    }
+    .nav button:nth-child(2) img {
+      content: url('https://raw.githubusercontent.com/freemyswagfms/freemypack-icons/main/cards.png');
+    }
+    .nav button:nth-child(3) img {
+      content: url('https://raw.githubusercontent.com/freemyswagfms/freemypack-icons/main/shop.png');
+    }
+    .nav button:nth-child(4) img {
+      content: url('https://raw.githubusercontent.com/freemyswagfms/freemypack-icons/main/settings.png');
+    }
+    .nav button:nth-child(1).active-tab img {
+      content: url('https://raw.githubusercontent.com/freemyswagfms/freemypack-icons/main/home%20%D0%B2%20%D0%B0%D0%BA%D1%82%D0%B8%D0%B2%D0%BD%D0%BE%D0%BC.png');
     }
     .nav button:nth-child(2).active-tab img {
-      content: url('https://raw.githubusercontent.com/freemyswagfms/freemypack-icons/main/cards%20в%20активном.png');
+      content: url('https://raw.githubusercontent.com/freemyswagfms/freemypack-icons/main/cards%20%D0%B2%20%D0%B0%D0%BA%D1%82%D0%B8%D0%B2%D0%BD%D0%BE%D0%BC.png');
     }
     .nav button:nth-child(3).active-tab img {
-      content: url('https://raw.githubusercontent.com/freemyswagfms/freemypack-icons/main/shop%20в%20активном.png');
+      content: url('https://raw.githubusercontent.com/freemyswagfms/freemypack-icons/main/shop%20%D0%B2%20%D0%B0%D0%BA%D1%82%D0%B8%D0%B2%D0%BD%D0%BE%D0%BC.png');
     }
     .nav button:nth-child(4).active-tab img {
-      content: url('https://raw.githubusercontent.com/freemyswagfms/freemypack-icons/main/settings%20в%20активном.png');
+      content: url('https://raw.githubusercontent.com/freemyswagfms/freemypack-icons/main/settings%20%D0%B2%20%D0%B0%D0%BA%D1%82%D0%B8%D0%B2%D0%BD%D0%BE%D0%BC.png');
     }
     .settings {
       display: flex;
@@ -124,16 +137,16 @@
 
   <div class="nav">
     <button onclick="navigate('spin', this)" class="active-tab">
-      <img src="https://raw.githubusercontent.com/freemyswagfms/freemypack-icons/main/home.png" alt="Домой">
+      <img alt="Домой">
     </button>
     <button onclick="navigate('', this)">
-      <img src="https://raw.githubusercontent.com/freemyswagfms/freemypack-icons/main/cards.png" alt="Категории">
+      <img alt="Категории">
     </button>
     <button onclick="navigate('', this)">
-      <img src="https://raw.githubusercontent.com/freemyswagfms/freemypack-icons/main/shop.png" alt="Магазин">
+      <img alt="Магазин">
     </button>
     <button onclick="navigate('settings', this)">
-      <img src="https://raw.githubusercontent.com/freemyswagfms/freemypack-icons/main/settings.png" alt="Настройки">
+      <img alt="Настройки">
     </button>
   </div>
 
