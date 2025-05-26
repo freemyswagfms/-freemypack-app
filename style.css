@@ -126,7 +126,7 @@
   /* Навигация */
   .nav-bar {
     position: fixed;
-    height: 70px;
+    height: 75px;
     width: 393px;
     bottom: 0;
     left: 0;
@@ -137,6 +137,8 @@
     background: #0d0d0d;
     z-index: 1000;
     opacity: 0.9;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
   }
   
   /* Индикатор */
